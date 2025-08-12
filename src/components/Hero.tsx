@@ -34,20 +34,27 @@ export default function Hero() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 w-full">
         <div className="mx-auto max-w-2xl text-center">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl leading-[1.2] pb-4">
-            <span>Personalized </span>
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0caeb8] via-[#ffffff] to-[#0caeb8]">Learning</span>
-            <span className="block">One Click Away.</span>
+            <span>Choose-Your-Own-Adventure Stories</span>
+            <span className="block bg-clip-text text-transparent bg-gradient-to-r from-[#0caeb8] via-[#ffffff] to-[#0caeb8]">That Grow With Your Child</span>
+            <span className="block text-3xl sm:text-4xl">in Reading, Math & More</span>
           </h1>
-          <p className="mt-6 text-lg leading-8 text-gray-200">
-            A powerful AI engine that crafts lessons and adapts to your student&apos;s pace, understands their unique learning style, and delivers engaging lessons on demand.
+          <p className="mt-6 text-lg leading-8 text-gray-200 max-w-3xl mx-auto">
+            Kimbo adapts every story to your learner&apos;s interests, skill level, and pace — blending reading and math into interactive adventures that evolve as they grow.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <GlowButton href="#">
-              Try it for free
+            <GlowButton href="#waitlist">
+              Join the Waitlist
             </GlowButton>
-            <GlowButton href="#" variant="secondary">
-              Learn more
+            <GlowButton href="#how-it-works" variant="secondary">
+              See How It Works
             </GlowButton>
+          </div>
+          
+          {/* Scroll Cue */}
+          <div className="mt-16 animate-bounce">
+            <svg className="w-8 h-8 mx-auto text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
           </div>
         </div>
       </div>

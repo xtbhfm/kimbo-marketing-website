@@ -7,14 +7,20 @@ import GlowButton from './GlowButton';
 
 const navigation = [
   { name: 'Use Cases', href: '/#use-cases' },
-  { name: 'How it works', href: '/#features' },
-  { name: 'Pricing', href: '/#pricing' },
+  { name: 'How it works', href: '/#how-it-works' },
+  { name: 'Contact', href: '/#contact' },
   { name: 'Help', href: '/#faqs' },
 ];
 
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,15 +86,73 @@ export default function Navbar() {
               </a>
             ))}
           </div>
+          
+          {/* Mobile menu button */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className={`p-2 rounded-md ${
+                lastScrollY > 100 ? 'text-[#1d2e4a]' : 'text-white'
+              }`}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isMounted && isMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-6">
             <GlowButton href="/team" variant="secondary">
               Meet the Team
             </GlowButton>
-            <GlowButton href="#">
-              View Demo
-            </GlowButton>
+                      <GlowButton href="/waitlist">
+            Join Waitlist
+          </GlowButton>
           </div>
         </div>
+        
+        {/* Mobile menu */}
+        {isMounted && isMenuOpen && (
+          <div className="lg:hidden mt-4 pb-4">
+            <div className="space-y-2">
+              {navigation.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={`block px-4 py-2 text-sm font-semibold rounded-md transition-colors ${
+                    lastScrollY > 100 ? 'text-[#1d2e4a] hover:bg-gray-100' : 'text-white hover:bg-white/10'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ))}
+              <div className="pt-4 space-y-2">
+                <a
+                  href="/team"
+                  className={`block px-4 py-2 text-sm font-semibold rounded-md transition-colors ${
+                    lastScrollY > 100 ? 'text-[#1d2e4a] hover:bg-gray-100' : 'text-white hover:bg-white/10'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Meet the Team
+                </a>
+                <a
+                  href="#waitlist"
+                  className={`block px-4 py-2 text-sm font-semibold rounded-md transition-colors ${
+                    lastScrollY > 100 ? 'bg-[#0caeb8] text-white hover:bg-[#0891b2]' : 'bg-white text-[#1d2e4a] hover:bg-gray-100'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Join Waitlist
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );
