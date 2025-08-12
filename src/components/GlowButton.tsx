@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface GlowButtonProps {
   children: React.ReactNode;
   onClick?: () => void;

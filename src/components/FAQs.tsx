@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 export default function FAQs() {
   return (
-    <div style={{ padding: "4rem 0" }}>
+    <div style={{ padding: "4rem 0 6rem 0" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <h2 style={{ textAlign: "center", color: "#0caeb8", fontWeight: 700, fontSize: 18 }}>FAQs</h2>
         <p style={{ textAlign: "center", fontWeight: 700, fontSize: 36, margin: "1rem 0 4rem 0", color: "#000" }}>
@@ -33,19 +33,19 @@ export default function FAQs() {
 export function Footer() {
   const links = [
     { href: "#pricing", label: "Pricing" },
-    { href: "#how-it-works", label: "How it works" },
+    { href: "#features", label: "How it works" },
     { href: "#use-cases", label: "Use Cases" },
-    { href: "#help", label: "Help" },
+    { href: "#faqs", label: "Help" },
   ];
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
     <footer style={{
-      background: '#f8fafc',
+      background: 'transparent',
       color: '#1d2e4a',
       padding: '2rem 0',
-      marginTop: '4rem',
-      borderTop: '4px solid #0caeb8',
+      marginTop: '0',
+      borderTop: 'none',
     }}>
       <div style={{
         maxWidth: 1200,

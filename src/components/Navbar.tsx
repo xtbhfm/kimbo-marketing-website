@@ -2,17 +2,17 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import GlowButton from './GlowButton';
 
 const navigation = [
-  { name: 'How it works', href: '#how-it-works' },
-  { name: 'Use Cases', href: '#use-cases' },
-  { name: 'Pricing', href: '#pricing' },
-  { name: 'Help', href: '#help' },
+  { name: 'Use Cases', href: '/#use-cases' },
+  { name: 'How it works', href: '/#features' },
+  { name: 'Pricing', href: '/#pricing' },
+  { name: 'Help', href: '/#faqs' },
 ];
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -36,7 +36,7 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   return (
-    <header 
+        <header 
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
@@ -49,26 +49,39 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between py-4">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#0caeb8] to-[#294266]">
+            <Link href="/" className="flex items-center gap-3">
+              <Image 
+                src="/images/screenshot-removebg-preview.png" 
+                alt="Kimbo Logo" 
+                width={50} 
+                height={50}
+                className="w-12 h-12 object-contain"
+              />
+              <span className={`text-2xl font-bold ${
+                lastScrollY > 100 ? 'text-[#1d2e4a]' : 'text-white'
+              }`}>
                 Kimbo
               </span>
-            </a>
+            </Link>
           </div>
           <div className="hidden lg:flex lg:gap-x-16">
             {navigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-semibold leading-6 text-[#1d2e4a] hover:text-[#0caeb8] transition-all duration-300 relative group"
+                className={`text-sm font-semibold leading-6 transition-all duration-300 relative group ${
+                  lastScrollY > 100 ? 'text-[#1d2e4a] hover:text-[#0caeb8]' : 'text-white hover:text-[#0caeb8]'
+                }`}
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0caeb8] transition-all duration-300 group-hover:w-full"></span>
+                <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
+                  lastScrollY > 100 ? 'bg-[#0caeb8]' : 'bg-[#0caeb8]'
+                }`}></span>
               </a>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-6">
-            <GlowButton href="#" variant="secondary">
+            <GlowButton href="/team" variant="secondary">
               Meet the Team
             </GlowButton>
             <GlowButton href="#">

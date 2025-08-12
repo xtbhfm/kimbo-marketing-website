@@ -5,18 +5,17 @@ const useCases = [
   {
     title: 'Personalized Learning',
     description: 'For every student, Kimbo adapts lessons and stories to fit their unique pace, grade, and learning style.',
+    image: '/images/pexels-pixabay-261895.jpg',
   },
   {
     title: 'Special Education',
     description: 'Kimbo helps neurodivergent and SPED students build confidence and skills, turning challenges into strengths.',
+    image: '/images/pexels-jonas-mohamadi-1490844.jpg',
   },
   {
     title: 'Parent Engagement',
     description: "Parents can see their child's growth, celebrate wins, and guide their journey — with Kimbo's insights by their side.",
-  },
-  {
-    title: 'Teacher Tools',
-    description: "Teachers use Kimbo to personalize instruction, track progress, and unlock every student's full potential.",
+    image: '/images/pexels-olly-3820065.jpg',
   },
 ];
 
@@ -44,9 +43,20 @@ export default function UseCases() {
                 <p className="text-lg text-gray-600">{useCase.description}</p>
               </div>
               <div className="w-full lg:w-1/2 flex justify-center mb-8 lg:mb-0">
-                <div className="flex items-center justify-center h-[400px] w-full max-w-[340px] rounded-xl bg-white shadow-lg border-4 border-blue-300 text-gray-400 text-lg font-semibold">
-                  Image Placeholder
-                </div>
+                {useCase.image ? (
+                  <div className="relative h-[400px] w-full max-w-[340px] rounded-xl overflow-hidden shadow-lg">
+                    <Image
+                      src={useCase.image}
+                      alt={useCase.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-center h-[400px] w-full max-w-[340px] rounded-xl bg-white shadow-lg border-4 border-blue-300 text-gray-400 text-lg font-semibold">
+                    Image Placeholder
+                  </div>
+                )}
               </div>
             </div>
           ))}

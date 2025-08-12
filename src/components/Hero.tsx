@@ -1,23 +1,45 @@
 'use client';
 
-import Image from 'next/image';
 import GlowButton from './GlowButton';
-import { Plus_Jakarta_Sans } from 'next/font/google';
-
-const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'] });
 
 export default function Hero() {
   return (
-    <section className="relative z-10 pt-64 pb-12">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 w-full">
+    <section className="relative z-10 pt-64 pb-12 overflow-hidden min-h-screen">
+      {/* Beautiful Static Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0caeb8] via-[#1d2e4a] to-[#0caeb8]"></div>
+      
+      {/* Static floating elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Large floating circles */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-white/10 rounded-full"></div>
+        <div className="absolute bottom-40 left-1/4 w-20 h-20 bg-white/10 rounded-full"></div>
+        <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-white/10 rounded-full"></div>
+        
+        {/* Static lines */}
+        <div className="absolute top-0 left-0 w-full h-px bg-white/20"></div>
+        <div className="absolute top-0 right-0 w-px h-full bg-white/20"></div>
+        <div className="absolute bottom-0 left-0 w-full h-px bg-white/20"></div>
+        <div className="absolute top-0 left-0 w-px h-full bg-white/20"></div>
+        
+        {/* Static particles */}
+        <div className="absolute top-1/3 left-1/4 w-2 h-2 bg-white/30 rounded-full"></div>
+        <div className="absolute top-2/3 right-1/4 w-1 h-1 bg-white/40 rounded-full"></div>
+        <div className="absolute top-1/4 right-1/3 w-1.5 h-1.5 bg-white/25 rounded-full"></div>
+      </div>
+      
+      {/* Subtle overlay */}
+      <div className="absolute inset-0 bg-black/20"></div>
+      
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 w-full">
         <div className="mx-auto max-w-2xl text-center">
-          <h1 className={`text-4xl font-bold tracking-tight text-black sm:text-6xl leading-[1.2] pb-4 ${plusJakarta.className}`}>
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl leading-[1.2] pb-4">
             <span>Personalized </span>
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0caeb8] via-[#1d2e4a] to-[#0caeb8]">Learning</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0caeb8] via-[#ffffff] to-[#0caeb8]">Learning</span>
             <span className="block">One Click Away.</span>
           </h1>
-          <p className="mt-6 text-lg leading-8 text-[#1d2e4a]">
-            A powerful AI engine that crafts lessons and adapts to your student's pace, understands their unique learning style, and delivers engaging lessons on demand.
+          <p className="mt-6 text-lg leading-8 text-gray-200">
+            A powerful AI engine that crafts lessons and adapts to your student&apos;s pace, understands their unique learning style, and delivers engaging lessons on demand.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <GlowButton href="#">
@@ -26,22 +48,6 @@ export default function Hero() {
             <GlowButton href="#" variant="secondary">
               Learn more
             </GlowButton>
-          </div>
-        </div>
-        {/* Hero Image */}
-        <div className="mt-16 flex justify-center">
-          <div className="relative w-full max-w-[90rem] bg-transparent perspective-[1000px]">
-            <div className="transform-style-3d will-change-transform transition-transform duration-500 hover:translate-z-10 hover:rotate-x-5 hover:rotate-y-5">
-              <Image
-                src="/images/website image one.png"
-                alt="AI Learning Platform"
-                width={3000}
-                height={2250}
-                className="w-full h-auto mix-blend-normal rounded-xl shadow-2xl"
-                priority
-                style={{ background: 'transparent' }}
-              />
-            </div>
           </div>
         </div>
       </div>

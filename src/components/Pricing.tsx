@@ -1,151 +1,482 @@
 'use client';
 
-import GlowButton from './GlowButton';
-import FAQs from './FAQs';
-
 export default function Pricing() {
   return (
-    <div style={{ padding: "4rem 0" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <h2 style={{ textAlign: "center", color: "#0caeb8", fontWeight: 700, fontSize: 18 }}>Pricing</h2>
-        <p style={{ textAlign: "center", fontWeight: 700, fontSize: 36, margin: "1rem 0 4rem 0", color: "#000" }}>
-          Choose the right plan for you
-        </p>
+    <div>
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 2rem" }}>
+        <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+          <h2 style={{ 
+            color: "#0caeb8", 
+            fontWeight: 600, 
+            fontSize: "1rem", 
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
+            marginBottom: "1rem"
+          }}>
+            Pricing
+          </h2>
+          <h1 style={{ 
+            fontWeight: 700, 
+            fontSize: "3rem", 
+            margin: "0 0 1rem 0", 
+            color: "#1a1a1a",
+            lineHeight: "1.2"
+          }}>
+            Choose the right plan for you
+          </h1>
+          <p style={{ 
+            fontSize: "1.125rem", 
+            color: "#666", 
+            maxWidth: "600px", 
+            margin: "0 auto",
+            lineHeight: "1.6"
+          }}>
+            Start with our free plan and upgrade as you grow
+          </p>
+        </div>
+        
         <div style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "8rem",
-          flexWrap: "wrap"
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: "1.5rem",
+          maxWidth: "1200px",
+          margin: "0 auto"
         }}>
-          {[1, 2, 3].map((_, i) => (
-            <div
-              key={i}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "space-around",
-                width: 260,
-                padding: "20px 1px",
-                margin: "10px 0",
-                textAlign: "center",
-                position: "relative",
-                cursor: "pointer",
-                boxShadow: "0 10px 15px -3px rgba(33,150,243,.4),0 4px 6px -4px rgba(33,150,243,.4)",
-                borderRadius: "10px",
-                background: "linear-gradient(45deg, #e6f7ff 0%, #ffffff 100%)"
-              }}
-            >
-              <div style={{ padding: "20px" }}>
-                <div style={{ fontWeight: 800, textTransform: "uppercase", color: "black", marginTop: "10px", fontSize: "25px", letterSpacing: "1px" }}>
-                  {i === 0 ? "Freemium" : i === 1 ? "Pro" : "Enterprise"}
-                </div>
-                <div style={{ color: "black", fontWeight: 800, fontSize: "50px" }}>
-                  {i === 0 ? "Free" : i === 1 ? "$30/month" : "Contact Sales"}
-                </div>
-                <div style={{ color: "black", marginTop: "10px", fontSize: "14px" }}>
-                  {i === 0 ? "Ideal for: Parents & teachers trying out Kimbo" : i === 1 ? "Ideal for: Parents & individual teachers who want deeper customization" : "Ideal for: School districts & educational organizations"}
-                </div>
+          {/* Freemium Plan */}
+          <div style={{
+            backgroundColor: "white",
+            borderRadius: "16px",
+            padding: "2.5rem 2rem",
+            textAlign: "center",
+            position: "relative",
+            border: "1px solid #e5e7eb",
+            transition: "all 0.3s ease",
+            cursor: "pointer",
+            boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)"
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-8px)";
+            e.currentTarget.style.boxShadow = "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.boxShadow = "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)";
+          }}>
+            <div style={{ marginBottom: "2rem" }}>
+              <h3 style={{ 
+                fontWeight: "600", 
+                fontSize: "1.25rem", 
+                color: "#374151", 
+                marginBottom: "0.5rem"
+              }}>
+                Freemium
+              </h3>
+              <div style={{ 
+                color: "#1a1a1a", 
+                fontWeight: "700", 
+                fontSize: "3rem",
+                marginBottom: "0.5rem"
+              }}>
+                Free
               </div>
-              <button
-                style={{
-                  boxSizing: "border-box",
-                  border: 0,
-                  borderRadius: "20px",
-                  color: "white",
-                  padding: "1em 1.8em",
-                  background: "#0caeb8",
-                  display: "flex",
-                  transition: "0.2s background",
-                  alignItems: "center",
-                  gap: "0.6em",
-                  fontWeight: "bold",
-                  cursor: "pointer",
-                  width: "90%"
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.background = "#000000";
-                  const arrow = e.currentTarget.querySelector('.arrow');
-                  if (arrow) {
-                    (arrow as HTMLElement).style.background = "white";
-                    (arrow as HTMLElement).style.transform = "translateX(5px)";
-                  }
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.background = "#0caeb8";
-                  const arrow = e.currentTarget.querySelector('.arrow');
-                  if (arrow) {
-                    (arrow as HTMLElement).style.background = "#0caeb8";
-                    (arrow as HTMLElement).style.transform = "translateX(0)";
-                  }
-                }}
-              >
-                {i === 0 ? "Free, forever" : i === 1 ? "$30/month per user" : "Contact sales"}
-                <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                  <div className="arrow" style={{ marginTop: "1px", width: "10px", background: "#0caeb8", height: "2px", position: "relative", transition: "0.2s", transform: "translateX(0)" }}>
-                    <div style={{ content: "", boxSizing: "border-box", position: "absolute", border: "solid white", borderWidth: "0 2px 2px 0", display: "inline-block", top: "-3px", right: "3px", transition: "0.2s", padding: "3px", transform: "rotate(-45deg)", width: "5px", height: "5px" }}></div>
-                  </div>
-                </div>
-              </button>
+              <div style={{ 
+                color: "#6b7280", 
+                fontSize: "0.875rem",
+                lineHeight: "1.5"
+              }}>
+                Forever
+              </div>
             </div>
-          ))}
+            
+            <div style={{ 
+              marginBottom: "2rem",
+              textAlign: "left"
+            }}>
+              <p style={{ 
+                color: "#6b7280", 
+                fontSize: "0.875rem", 
+                lineHeight: "1.6",
+                marginBottom: "1.5rem"
+              }}>
+                Ideal for parents & teachers trying out the platform
+              </p>
+              
+              <ul style={{ 
+                listStyle: "none", 
+                padding: 0, 
+                margin: 0,
+                color: "#6b7280",
+                fontSize: "0.875rem"
+              }}>
+                <li style={{ 
+                  padding: "0.5rem 0", 
+                  display: "flex", 
+                  alignItems: "center",
+                  gap: "0.75rem"
+                }}>
+                  <span style={{ 
+                    color: "#10b981", 
+                    fontSize: "1.25rem",
+                    fontWeight: "bold"
+                  }}>✓</span>
+                  Basic features included
+                </li>
+                <li style={{ 
+                  padding: "0.5rem 0", 
+                  display: "flex", 
+                  alignItems: "center",
+                  gap: "0.75rem"
+                }}>
+                  <span style={{ 
+                    color: "#10b981", 
+                    fontSize: "1.25rem",
+                    fontWeight: "bold"
+                  }}>✓</span>
+                  Up to 5 projects
+                </li>
+                <li style={{ 
+                  padding: "0.5rem 0", 
+                  display: "flex", 
+                  alignItems: "center",
+                  gap: "0.75rem"
+                }}>
+                  <span style={{ 
+                    color: "#10b981", 
+                    fontSize: "1.25rem",
+                    fontWeight: "bold"
+                  }}>✓</span>
+                  Community support
+                </li>
+              </ul>
+            </div>
+            
+            <button style={{
+              width: "100%",
+              padding: "0.875rem 1.5rem",
+              backgroundColor: "#f3f4f6",
+              color: "#374151",
+              border: "1px solid #d1d5db",
+              borderRadius: "8px",
+              fontSize: "0.875rem",
+              fontWeight: "600",
+              cursor: "pointer",
+              transition: "all 0.2s ease"
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#e5e7eb";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "#f3f4f6";
+            }}>
+              Get Started Free
+            </button>
+          </div>
+
+          {/* Pro Plan */}
+          <div style={{
+            backgroundColor: "white",
+            borderRadius: "16px",
+            padding: "2.5rem 2rem",
+            textAlign: "center",
+            position: "relative",
+            border: "2px solid #0caeb8",
+            transition: "all 0.3s ease",
+            cursor: "pointer",
+            boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-8px)";
+            e.currentTarget.style.boxShadow = "0 25px 50px -12px rgba(0, 0, 0, 0.25)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.boxShadow = "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)";
+          }}>
+            <div style={{ 
+              position: "absolute", 
+              top: "-12px", 
+              left: "50%", 
+              transform: "translateX(-50%)",
+              backgroundColor: "#0caeb8",
+              color: "white",
+              padding: "0.5rem 1rem",
+              borderRadius: "20px",
+              fontSize: "0.75rem",
+              fontWeight: "600",
+              textTransform: "uppercase",
+              letterSpacing: "0.05em"
+            }}>
+              Most Popular
+            </div>
+            
+            <div style={{ marginBottom: "2rem" }}>
+              <h3 style={{ 
+                fontWeight: "600", 
+                fontSize: "1.25rem", 
+                color: "#374151", 
+                marginBottom: "0.5rem"
+              }}>
+                Pro
+              </h3>
+              <div style={{ 
+                color: "#1a1a1a", 
+                fontWeight: "700", 
+                fontSize: "3rem",
+                marginBottom: "0.5rem"
+              }}>
+                $30
+              </div>
+              <div style={{ 
+                color: "#6b7280", 
+                fontSize: "0.875rem"
+              }}>
+                per month per user
+              </div>
+            </div>
+            
+            <div style={{ 
+              marginBottom: "2rem",
+              textAlign: "left"
+            }}>
+              <p style={{ 
+                color: "#6b7280", 
+                fontSize: "0.875rem", 
+                lineHeight: "1.6",
+                marginBottom: "1.5rem"
+              }}>
+                Ideal for parents & individual teachers who want deeper customization
+              </p>
+              
+              <ul style={{ 
+                listStyle: "none", 
+                padding: 0, 
+                margin: 0,
+                color: "#6b7280",
+                fontSize: "0.875rem"
+              }}>
+                <li style={{ 
+                  padding: "0.5rem 0", 
+                  display: "flex", 
+                  alignItems: "center",
+                  gap: "0.75rem"
+                }}>
+                  <span style={{ 
+                    color: "#10b981", 
+                    fontSize: "1.25rem",
+                    fontWeight: "bold"
+                  }}>✓</span>
+                  Everything in Freemium
+                </li>
+                <li style={{ 
+                  padding: "0.5rem 0", 
+                  display: "flex", 
+                  alignItems: "center",
+                  gap: "0.75rem"
+                }}>
+                  <span style={{ 
+                    color: "#10b981", 
+                    fontSize: "1.25rem",
+                    fontWeight: "bold"
+                  }}>✓</span>
+                  Unlimited projects
+                </li>
+                <li style={{ 
+                  padding: "0.5rem 0", 
+                  display: "flex", 
+                  alignItems: "center",
+                  gap: "0.75rem"
+                }}>
+                  <span style={{ 
+                    color: "#10b981", 
+                    fontSize: "1.25rem",
+                    fontWeight: "bold"
+                  }}>✓</span>
+                  Advanced analytics
+                </li>
+                <li style={{ 
+                  padding: "0.5rem 0", 
+                  display: "flex", 
+                  alignItems: "center",
+                  gap: "0.75rem"
+                }}>
+                  <span style={{ 
+                    color: "#10b981", 
+                    fontSize: "1.25rem",
+                    fontWeight: "bold"
+                  }}>✓</span>
+                  Priority support
+                </li>
+              </ul>
+            </div>
+            
+            <button style={{
+              width: "100%",
+              padding: "0.875rem 1.5rem",
+              backgroundColor: "#0caeb8",
+              color: "white",
+              border: "none",
+              borderRadius: "8px",
+              fontSize: "0.875rem",
+              fontWeight: "600",
+              cursor: "pointer",
+              transition: "all 0.2s ease"
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#0891b2";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "#0caeb8";
+            }}>
+              Start Pro Trial
+            </button>
+          </div>
+
+          {/* Enterprise Plan */}
+          <div style={{
+            backgroundColor: "white",
+            borderRadius: "16px",
+            padding: "2.5rem 2rem",
+            textAlign: "center",
+            position: "relative",
+            border: "1px solid #e5e7eb",
+            transition: "all 0.3s ease",
+            cursor: "pointer",
+            boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)"
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-8px)";
+            e.currentTarget.style.boxShadow = "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.boxShadow = "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)";
+          }}>
+            <div style={{ marginBottom: "2rem" }}>
+              <h3 style={{ 
+                fontWeight: "600", 
+                fontSize: "1.25rem", 
+                color: "#374151", 
+                marginBottom: "0.5rem"
+              }}>
+                Enterprise
+              </h3>
+              <div style={{ 
+                color: "#1a1a1a", 
+                fontWeight: "700", 
+                fontSize: "3rem",
+                marginBottom: "0.5rem"
+              }}>
+                Custom
+              </div>
+              <div style={{ 
+                color: "#6b7280", 
+                fontSize: "0.875rem"
+              }}>
+                Contact sales
+              </div>
+            </div>
+            
+            <div style={{ 
+              marginBottom: "2rem",
+              textAlign: "left"
+            }}>
+              <p style={{ 
+                color: "#6b7280", 
+                fontSize: "0.875rem", 
+                lineHeight: "1.6",
+                marginBottom: "1.5rem"
+              }}>
+                Ideal for school districts & educational organizations
+              </p>
+              
+              <ul style={{ 
+                listStyle: "none", 
+                padding: 0, 
+                margin: 0,
+                color: "#6b7280",
+                fontSize: "0.875rem"
+              }}>
+                <li style={{ 
+                  padding: "0.5rem 0", 
+                  display: "flex", 
+                  alignItems: "center",
+                  gap: "0.75rem"
+                }}>
+                  <span style={{ 
+                    color: "#10b981", 
+                    fontSize: "1.25rem",
+                    fontWeight: "bold"
+                  }}>✓</span>
+                  Everything in Pro
+                </li>
+                <li style={{ 
+                  padding: "0.5rem 0", 
+                  display: "flex", 
+                  alignItems: "center",
+                  gap: "0.75rem"
+                }}>
+                  <span style={{ 
+                    color: "#10b981", 
+                    fontSize: "1.25rem",
+                    fontWeight: "bold"
+                  }}>✓</span>
+                  Custom integrations
+                </li>
+                <li style={{ 
+                  padding: "0.5rem 0", 
+                  display: "flex", 
+                  alignItems: "center",
+                  gap: "0.75rem"
+                }}>
+                  <span style={{ 
+                    color: "#10b981", 
+                    fontSize: "1.25rem",
+                    fontWeight: "bold"
+                  }}>✓</span>
+                  Dedicated support
+                </li>
+                <li style={{ 
+                  padding: "0.5rem 0", 
+                  display: "flex", 
+                  alignItems: "center",
+                  gap: "0.75rem"
+                }}>
+                  <span style={{ 
+                    color: "#10b981", 
+                    fontSize: "1.25rem",
+                    fontWeight: "bold"
+                  }}>✓</span>
+                  SLA guarantees
+                </li>
+              </ul>
+            </div>
+            
+            <button style={{
+              width: "100%",
+              padding: "0.875rem 1.5rem",
+              backgroundColor: "white",
+              color: "#0caeb8",
+              border: "1px solid #0caeb8",
+              borderRadius: "8px",
+              fontSize: "0.875rem",
+              fontWeight: "600",
+              cursor: "pointer",
+              transition: "all 0.2s ease"
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#0caeb8";
+              e.currentTarget.style.color = "white";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "white";
+              e.currentTarget.style.color = "#0caeb8";
+            }}>
+              Contact Sales
+            </button>
+          </div>
         </div>
       </div>
-      <div style={{ marginTop: "4rem" }}>
-        <FAQs />
-      </div>
+      
     </div>
   );
-}
-
-// Add the button styles
-const buttonStyles = `
-.button {
-  cursor: pointer;
-  position: relative;
-  padding: 10px 24px;
-  font-size: 18px;
-  color: rgb(193, 163, 98);
-  border: 2px solid rgb(193, 163, 98);
-  border-radius: 34px;
-  background-color: transparent;
-  font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-  overflow: hidden;
-}
-
-.button::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 50px;
-  height: 50px;
-  border-radius: inherit;
-  scale: 0;
-  z-index: -1;
-  background-color: rgb(193, 163, 98);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.button:hover::before {
-  scale: 3;
-}
-
-.button:hover {
-  color: #212121;
-  scale: 1.1;
-  box-shadow: 0 0px 20px rgba(193, 163, 98,0.4);
-}
-
-.button:active {
-  scale: 1;
-}
-`;
-
-// Add the styles to the document
-if (typeof document !== 'undefined') {
-  const styleSheet = document.createElement("style");
-  styleSheet.innerText = buttonStyles;
-  document.head.appendChild(styleSheet);
 } 
