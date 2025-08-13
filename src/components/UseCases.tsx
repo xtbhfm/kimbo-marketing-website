@@ -16,7 +16,7 @@ const useCases = [
     title: 'Chad\'s Willy Wonka Adventure',
     subtitle: 'Down Syndrome Learning Support',
     description: 'Chad, a 12-year-old with Down syndrome, struggled to be motivated to learn math and to read, but once he found Kimbo which implemented his interest in Willy Wonka in an interactive story that put him inside the story so he can explore the chocolate factory while solving math puzzles about counting golden tickets and reading about the magical world of candy.',
-    result: '&ldquo;Usually I don&apos;t like math, but this is actually fun!&rdquo; - Chad',
+    result: '"Usually I don\'t like math, but this is actually fun!" - Chad',
     image: '/images/pexels-jonas-mohamadi-1490844.jpg',
     features: ['Multi-sensory support', 'Customizable pacing', 'Visual aids', 'Gentle progression'],
     icon: '🚀',
@@ -42,10 +42,6 @@ export default function UseCases() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0caeb8] to-[#1d2e4a] text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <span>✨</span>
-            <span>Real Impact Stories</span>
-          </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 mb-4 sm:mb-6">
             Use Cases
           </h2>
@@ -66,7 +62,7 @@ export default function UseCases() {
                   : 'bg-white text-gray-700 hover:bg-gray-100 shadow-md hover:shadow-lg'
               }`}
             >
-              <span className="text-lg sm:text-xl">{useCase.icon}</span>
+              <span className="text-lg sm:text-xl"></span>
               <span className="font-semibold">{useCase.title.split('\'')[0]}</span>
             </button>
           ))}
@@ -88,7 +84,7 @@ export default function UseCases() {
                   <div className="space-y-2 sm:space-y-3">
                     <div className="flex items-center gap-3">
                       <div className={`text-3xl sm:text-4xl bg-gradient-to-r ${useCase.color} bg-clip-text text-transparent`}>
-                        {useCase.icon}
+                        
                       </div>
                       <div>
                         <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">{useCase.title}</h3>
@@ -101,7 +97,7 @@ export default function UseCases() {
                   <div className="space-y-3 sm:space-y-4">
                     <p className="text-base sm:text-lg text-gray-700 leading-relaxed">{useCase.description}</p>
                     <div className="bg-gradient-to-r from-[#0caeb8]/10 to-[#1d2e4a]/10 p-3 sm:p-4 rounded-lg border-l-4 border-[#0caeb8]">
-                      <p className="text-gray-800 font-medium italic text-sm sm:text-base">&ldquo;{useCase.result}&rdquo;</p>
+                      <p className="text-gray-800 font-medium italic text-sm sm:text-base">&quot;{useCase.result}&quot;</p>
                     </div>
                   </div>
 

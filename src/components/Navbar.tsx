@@ -32,6 +32,8 @@ export default function Navbar() {
       } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
         // Scrolling down and past 100px
         setIsVisible(false);
+        // Close mobile menu when scrolling down
+        setIsMenuOpen(false);
       }
       
       setLastScrollY(currentScrollY);
@@ -87,8 +89,10 @@ export default function Navbar() {
             ))}
           </div>
           
-          {/* Mobile menu button - Always visible */}
-          <div className="lg:hidden">
+          {/* Mobile menu button - Always visible when menu is open, otherwise follows scroll behavior */}
+          <div className={`lg:hidden transition-all duration-300 ${
+            isMenuOpen ? 'opacity-100 translate-y-0' : (isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2')
+          }`}>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`p-2 rounded-md transition-colors ${
