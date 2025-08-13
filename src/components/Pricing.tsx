@@ -2,98 +2,37 @@
 
 export default function Pricing() {
   return (
-    <div>
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 2rem" }}>
-        <div style={{ textAlign: "center", marginBottom: "4rem" }}>
-          <h2 style={{ 
-            color: "#0caeb8", 
-            fontWeight: 600, 
-            fontSize: "1rem", 
-            textTransform: "uppercase",
-            letterSpacing: "0.1em",
-            marginBottom: "1rem"
-          }}>
+    <div className="py-12 sm:py-16 md:py-20 lg:py-24">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <h2 className="text-[#0caeb8] font-semibold text-sm sm:text-base uppercase tracking-wider mb-4">
             Coming Soon
           </h2>
-          <h1 style={{ 
-            fontWeight: 700, 
-            fontSize: "3rem", 
-            margin: "0 0 1rem 0", 
-            color: "#1a1a1a",
-            lineHeight: "1.2"
-          }}>
+          <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#1a1a1a] mb-4 leading-tight">
             Kimbo is Coming
           </h1>
-          <p style={{ 
-            fontSize: "1.125rem", 
-            color: "#666", 
-            maxWidth: "600px", 
-            margin: "0 auto",
-            lineHeight: "1.6"
-          }}>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Get ready for adaptive, AI-powered learning adventures.
           </p>
         </div>
         
-        <div style={{
-          display: "flex",
-          justifyContent: "center",
-          maxWidth: "600px",
-          margin: "0 auto"
-        }}>
+        <div className="flex justify-center max-w-2xl mx-auto">
           {/* Coming Soon Card */}
-          <div style={{
-            backgroundColor: "white",
-            borderRadius: "16px",
-            padding: "3rem 2.5rem",
-            textAlign: "center",
-            position: "relative",
-            border: "2px solid #0caeb8",
-            transition: "all 0.3s ease",
-            cursor: "pointer",
-            boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "translateY(-8px)";
-            e.currentTarget.style.boxShadow = "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "translateY(0)";
-            e.currentTarget.style.boxShadow = "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)";
-          }}>
-            <div style={{ position: "absolute", top: "-12px", left: "50%", transform: "translateX(-50%)", backgroundColor: "#0caeb8", color: "white", padding: "0.5rem 1rem", borderRadius: "20px", fontSize: "0.75rem", fontWeight: "600", textTransform: "uppercase", letterSpacing: "0.05em" }}>Coming Soon</div>
-            <div style={{ marginBottom: "2rem" }}>
-              <h3 style={{ 
-                fontWeight: "700", 
-                fontSize: "2rem", 
-                color: "#1a1a1a", 
-                marginBottom: "1rem"
-              }}>
+          <div className="bg-white rounded-2xl p-6 sm:p-8 md:p-12 text-center relative border-2 border-[#0caeb8] transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl hover:-translate-y-2 w-full">
+            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#0caeb8] text-white px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider">
+              Coming Soon
+            </div>
+            <div className="mb-6 sm:mb-8">
+              <h3 className="font-bold text-xl sm:text-2xl md:text-3xl text-[#1a1a1a] mb-4">
                 Kimbo is Coming Soon
               </h3>
-              <p style={{ 
-                color: "#6b7280", 
-                fontSize: "1.125rem", 
-                lineHeight: "1.6",
-                marginBottom: "2rem"
-              }}>
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
                 Get ready for adaptive, AI-powered learning adventures.
               </p>
             </div>
             <button 
               onClick={() => window.location.href = '#contact'}
-              style={{ 
-                width: "100%", 
-                padding: "1rem 2rem", 
-                backgroundColor: "#0caeb8", 
-                color: "white", 
-                border: "none", 
-                borderRadius: "8px", 
-                fontSize: "1rem", 
-                fontWeight: "600", 
-                cursor: "pointer", 
-                transition: "all 0.2s ease" 
-              }}
+              className="w-full py-3 sm:py-4 bg-[#0caeb8] text-white border-none rounded-lg text-base sm:text-lg font-semibold cursor-pointer transition-all duration-200 hover:bg-[#0891b2] hover:shadow-lg"
             >
               Contact Us
             </button>

@@ -4,24 +4,24 @@ import React, { useState } from 'react';
 
 export default function FAQs() {
   return (
-    <div style={{ padding: "4rem 0 6rem 0" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <h2 style={{ textAlign: "center", color: "#0caeb8", fontWeight: 700, fontSize: 18 }}>FAQs</h2>
-        <p style={{ textAlign: "center", fontWeight: 700, fontSize: 36, margin: "1rem 0 4rem 0", color: "#000" }}>
+    <div className="py-12 sm:py-16 md:py-20 lg:py-24">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-center text-[#0caeb8] font-bold text-lg mb-4">FAQs</h2>
+        <p className="text-center font-bold text-2xl sm:text-3xl md:text-4xl text-gray-900 mb-8 sm:mb-12 lg:mb-16">
           Frequently Asked Questions
         </p>
-        <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-          <div style={{ background: "#f5f5f5", padding: "1rem", borderRadius: "0.5rem" }}>
-            <h3 style={{ color: "#000", fontWeight: 600 }}>What is Kimbo?</h3>
-            <p style={{ color: "#000" }}>Kimbo is an educational platform designed to provide story-driven lessons and personalized adventures for learners.</p>
+        <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8">
+          <div className="bg-gray-50 p-4 sm:p-6 rounded-lg">
+            <h3 className="text-gray-900 font-semibold text-lg sm:text-xl mb-2 sm:mb-3">What is Kimbo?</h3>
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed">Kimbo is an educational platform designed to provide story-driven lessons and personalized adventures for learners.</p>
           </div>
-          <div style={{ background: "#f5f5f5", padding: "1rem", borderRadius: "0.5rem" }}>
-            <h3 style={{ color: "#000", fontWeight: 600 }}>How can I get started?</h3>
-            <p style={{ color: "#000" }}>You can start by signing up for a free account and exploring the available lessons and adventures.</p>
+          <div className="bg-gray-50 p-4 sm:p-6 rounded-lg">
+            <h3 className="text-gray-900 font-semibold text-lg sm:text-xl mb-2 sm:mb-3">How can I get started?</h3>
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed">You can start by signing up for a free account and exploring the available lessons and adventures.</p>
           </div>
-          <div style={{ background: "#f5f5f5", padding: "1rem", borderRadius: "0.5rem" }}>
-            <h3 style={{ color: "#000", fontWeight: 600 }}>What are the pricing plans?</h3>
-            <p style={{ color: "#000" }}>We offer Freemium, Pro, and Enterprise plans. Check out the Pricing section for more details.</p>
+          <div className="bg-gray-50 p-4 sm:p-6 rounded-lg">
+            <h3 className="text-gray-900 font-semibold text-lg sm:text-xl mb-2 sm:mb-3">What are the pricing plans?</h3>
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed">We offer Freemium, Pro, and Enterprise plans. Check out the Pricing section for more details.</p>
           </div>
         </div>
       </div>
@@ -40,34 +40,17 @@ export function Footer() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <footer style={{
-      background: 'transparent',
-      color: '#1d2e4a',
-      padding: '2rem 0',
-      marginTop: '0',
-      borderTop: 'none',
-    }}>
-      <div style={{
-        maxWidth: 1200,
-        margin: '0 auto',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '1.5rem',
-      }}>
-        <div style={{ fontWeight: 700, fontSize: 24, letterSpacing: 1, color: '#0caeb8' }}>Kimbo</div>
-        <nav style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+    <footer className="bg-transparent text-[#1d2e4a] py-8 sm:py-12 mt-0 border-t-0">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-4 sm:gap-6">
+        <div className="font-bold text-xl sm:text-2xl tracking-wider text-[#0caeb8]">Kimbo</div>
+        <nav className="flex gap-4 sm:gap-6 lg:gap-8 flex-wrap justify-center">
           {links.map((link, idx) => (
             <a
               key={link.href}
               href={link.href}
-              style={{
-                color: hovered === idx ? '#0caeb8' : '#1d2e4a',
-                textDecoration: 'none',
-                fontWeight: 500,
-                transition: 'color 0.2s',
-                cursor: 'pointer',
-              }}
+              className={`text-base sm:text-lg font-medium transition-colors duration-200 cursor-pointer ${
+                hovered === idx ? 'text-[#0caeb8]' : 'text-[#1d2e4a]'
+              }`}
               onMouseEnter={() => setHovered(idx)}
               onMouseLeave={() => setHovered(null)}
             >
@@ -75,7 +58,7 @@ export function Footer() {
             </a>
           ))}
         </nav>
-        <div style={{ fontSize: 14, color: '#64748b', marginTop: '1rem' }}>
+        <div className="text-sm sm:text-base text-gray-500 mt-4 sm:mt-6">
           &copy; {new Date().getFullYear()} Kimbo. All rights reserved.
         </div>
       </div>

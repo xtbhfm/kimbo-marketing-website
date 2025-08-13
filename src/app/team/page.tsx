@@ -141,18 +141,12 @@ export default function TeamPage() {
           <p className="text-xl text-[#1d2e4a] opacity-80 mb-8 max-w-3xl mx-auto">
             Join us in our mission to make personalized education accessible to every student.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Link 
               href="/"
               className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-[#0caeb8] bg-white hover:bg-blue-50 transition-colors"
             >
               Back to Home
-            </Link>
-            <Link 
-              href="#"
-              className="inline-flex items-center justify-center px-8 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white hover:text-[#0caeb8] transition-colors"
-            >
-              View Demo
             </Link>
           </div>
         </div>
