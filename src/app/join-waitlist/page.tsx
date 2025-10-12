@@ -38,7 +38,7 @@ export default function JoinWaitlistPage() {
             Join the Waitlist
           </h1>
           <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-            Be among the first to experience Kimbo's revolutionary adaptive learning adventures
+            Be among the first to experience Kimbo&apos;s revolutionary adaptive learning adventures
           </p>
         </div>
       </section>
@@ -100,7 +100,7 @@ export default function JoinWaitlistPage() {
                     } else {
                       alert('There was an error submitting your information. Please try again.');
                     }
-                  } catch (error) {
+                  } catch {
                     alert('There was an error submitting your information. Please try again.');
                   }
                 }}>
@@ -167,7 +167,7 @@ export default function JoinWaitlistPage() {
                   
                   <div>
                     <label htmlFor="interests" className="block text-sm font-medium text-gray-700 mb-2">
-                      Tell us about your child's interests (optional)
+                      Tell us about your child&apos;s interests (optional)
                     </label>
                     <textarea
                       id="interests"
@@ -187,7 +187,7 @@ export default function JoinWaitlistPage() {
                 </form>
                 
                 <p className="text-sm text-gray-500 mt-6 text-center">
-                  We'll notify you as soon as Kimbo is ready for early access. No spam, ever.
+                  We&apos;ll notify you as soon as Kimbo is ready for early access. No spam, ever.
                 </p>
               </div>
               

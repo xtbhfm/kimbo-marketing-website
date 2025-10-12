@@ -86,7 +86,7 @@ export default function TeamPage() {
               Meet Our Team
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              The passionate educators, engineers, and innovators behind Kimbo's mission to transform learning for every student.
+              The passionate educators, engineers, and innovators behind Kimbo&apos;s mission to transform learning for every student.
             </p>
           </div>
           

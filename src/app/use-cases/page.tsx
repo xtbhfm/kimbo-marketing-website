@@ -195,7 +195,7 @@ export default function UseCasesPage() {
               Ready to Create Your Own Success Story?
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Join the waitlist and be among the first to experience Kimbo's personalized learning adventures
+              Join the waitlist and be among the first to experience Kimbo&apos;s personalized learning adventures
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

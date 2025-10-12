@@ -3,7 +3,7 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ParallaxComparison from '@/components/ParallaxComparison';
-import FAQs, { Footer } from '@/components/FAQs';
+import { Footer } from '@/components/FAQs';
 
 export default function Home() {
   return (

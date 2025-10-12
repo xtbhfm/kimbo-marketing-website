@@ -139,7 +139,7 @@ export function Footer() {
             <h3 className="text-lg font-light text-gray-800 mb-6">Get in Touch</h3>
             <div className="space-y-3">
               <p className="text-gray-600">
-                Questions about Kimbo? We'd love to hear from you.
+                Questions about Kimbo? We&apos;d love to hear from you.
               </p>
               <a
                 href="mailto:hello@kimbo.com"
