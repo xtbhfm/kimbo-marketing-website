@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import { Footer } from '@/components/FAQs'
 
@@ -55,7 +54,7 @@ export default function DemoPage() {
                 See Kimbo in Action
               </h2>
               <p className="text-xl text-[#1d2e4a] opacity-80 max-w-2xl mx-auto leading-relaxed">
-                Watch how Kimbo transforms learning into personalized adventures that adapt to each child's interests and abilities
+                Watch how Kimbo transforms learning into personalized adventures that adapt to each child&apos;s interests and abilities
               </p>
             </div>
             

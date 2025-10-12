@@ -75,7 +75,7 @@ export default function HowItWorksPage() {
                 </p>
                 <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
                   <p className="text-gray-700 italic">
-                    "Finally, we can show concrete progress on IEP goals. The data speaks for itself and makes our meetings so much more meaningful."
+                    &quot;Finally, we can show concrete progress on IEP goals. The data speaks for itself and makes our meetings so much more meaningful.&quot;
                   </p>
                   <p className="text-sm text-gray-500 mt-2">- Special Education Teacher</p>
                 </div>
@@ -99,11 +99,11 @@ export default function HowItWorksPage() {
                   Parent Dashboard Insights
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Parents get a comprehensive dashboard showing their child's learning progress, time spent on different subjects, achievements unlocked, and areas where they're excelling or need support.
+                  Parents get a comprehensive dashboard showing their child&apos;s learning progress, time spent on different subjects, achievements unlocked, and areas where they&apos;re excelling or need support.
                 </p>
                 <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
                   <p className="text-gray-700 italic">
-                    "I love seeing exactly how my daughter is progressing. The dashboard shows me her strengths and where she needs encouragement."
+                    &quot;I love seeing exactly how my daughter is progressing. The dashboard shows me her strengths and where she needs encouragement.&quot;
                   </p>
                   <p className="text-sm text-gray-500 mt-2">- Parent testimonial</p>
                 </div>
@@ -157,7 +157,7 @@ export default function HowItWorksPage() {
                 </p>
                 <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
                   <p className="text-gray-700 italic">
-                    "My son is so motivated to earn Kimbo Koins! He asks to do math problems just to collect more coins and unlock new adventures."
+                    &quot;My son is so motivated to earn Kimbo Koins! He asks to do math problems just to collect more coins and unlock new adventures.&quot;
                   </p>
                   <p className="text-sm text-gray-500 mt-2">- Parent testimonial</p>
                 </div>
