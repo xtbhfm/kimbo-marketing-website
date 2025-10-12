@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
+import { Footer } from '@/components/FAQs';
 
 export default function WaitlistPage() {
   return (
@@ -176,7 +177,7 @@ Sent from Kimbo Waitlist Form
       </section>
 
       {/* CTA Section */}
-      <section id="cta" className="py-24 bg-gradient-to-b from-blue-250 to-blue-300">
+      <section id="cta" className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-[#1d2e4a] sm:text-4xl mb-6">
             Ready to Transform Learning?
@@ -187,19 +188,24 @@ Sent from Kimbo Waitlist Form
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/"
-              className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-[#0caeb8] bg-white hover:bg-blue-50 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-3 border-2 border-[#0caeb8] text-base font-medium rounded-2xl text-[#0caeb8] hover:bg-[#0caeb8] hover:text-white transition-colors"
             >
               Back to Home
             </Link>
             <Link 
-              href="/team"
-              className="inline-flex items-center justify-center px-8 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white hover:text-[#0caeb8] transition-colors"
+              href="/demo"
+              className="inline-flex items-center justify-center px-8 py-3 border-2 border-[#0caeb8] text-base font-medium rounded-2xl text-[#0caeb8] hover:bg-[#0caeb8] hover:text-white transition-colors"
             >
-              Meet the Team
+              Watch Demo
             </Link>
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <div className="bg-gray-50">
+        <Footer />
+      </div>
     </main>
   );
 }

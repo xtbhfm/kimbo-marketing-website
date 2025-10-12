@@ -4,7 +4,7 @@ import GlowButton from './GlowButton';
 
 export default function Hero() {
   return (
-    <section className="relative z-10 pt-20 sm:pt-32 md:pt-48 lg:pt-64 pb-8 sm:pb-12 overflow-hidden min-h-screen">
+    <section className="relative z-10 pt-20 sm:pt-32 md:pt-48 lg:pt-64 pb-8 sm:pb-12 overflow-hidden h-screen">
       {/* Beautiful Static Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0caeb8] via-[#1d2e4a] to-[#0caeb8]"></div>
       
@@ -42,8 +42,11 @@ export default function Hero() {
             Kimbo adapts every story to your learner&apos;s interests, skill level, and pace — blending reading and math into interactive adventures that evolve as they grow.
           </p>
           <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-x-6 px-4 sm:px-0">
-            <GlowButton href="/waitlist" className="w-full sm:w-auto">
+            <GlowButton href="/join-waitlist" className="w-full sm:w-auto">
               Join the Waitlist
+            </GlowButton>
+            <GlowButton href="/demo" variant="secondary" className="w-full sm:w-auto">
+              View Demo
             </GlowButton>
             <GlowButton href="#how-it-works" variant="secondary" className="w-full sm:w-auto">
               See How It Works

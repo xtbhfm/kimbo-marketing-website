@@ -6,10 +6,9 @@ import Image from 'next/image';
 import GlowButton from './GlowButton';
 
 const navigation = [
-  { name: 'Use Cases', href: '/#use-cases' },
-  { name: 'How it works', href: '/#how-it-works' },
-  { name: 'Contact', href: '/#contact' },
-  { name: 'Help', href: '/#faqs' },
+  { name: 'How It Works', href: '/how-it-works' },
+  { name: 'Use Cases', href: '/use-cases' },
+  { name: 'Meet the Team', href: '/team' },
 ];
 
 export default function Navbar() {
@@ -109,11 +108,11 @@ export default function Navbar() {
             </button>
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-6">
-            <GlowButton href="/team" variant="secondary">
-              Meet the Team
-            </GlowButton>
-            <GlowButton href="/waitlist">
+            <GlowButton href="/join-waitlist">
               Join Waitlist
+            </GlowButton>
+            <GlowButton href="/demo" variant="secondary">
+              See Kimbo Demo
             </GlowButton>
           </div>
         </div>
@@ -136,20 +135,18 @@ export default function Navbar() {
               ))}
               <div className="pt-2 sm:pt-4 space-y-1 sm:space-y-2 border-t border-gray-200">
                 <a
-                  href="/team"
-                  className={`block px-3 sm:px-4 py-2 sm:py-3 text-sm font-semibold rounded-md transition-colors ${
-                    lastScrollY > 100 ? 'text-[#1d2e4a] hover:bg-gray-100' : 'text-[#1d2e4a] hover:bg-gray-100'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Meet the Team
-                </a>
-                <a
-                  href="#waitlist"
+                  href="/join-waitlist"
                   className={`block px-3 sm:px-4 py-2 sm:py-3 text-sm font-semibold rounded-md transition-colors bg-[#0caeb8] text-white hover:bg-[#0891b2]`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Join Waitlist
+                </a>
+                <a
+                  href="/demo"
+                  className={`block px-3 sm:px-4 py-2 sm:py-3 text-sm font-semibold rounded-md transition-colors border border-[#0caeb8] text-[#0caeb8] hover:bg-[#0caeb8] hover:text-white`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  See Kimbo Demo
                 </a>
               </div>
             </div>

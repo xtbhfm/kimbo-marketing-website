@@ -34,16 +34,12 @@ export default function ParallaxUseCases() {
     offset: ['start start', 'end end'],
   });
 
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [1, 1, 1, 0]);
 
   return (
     <div ref={containerRef} className="relative min-h-[300vh]">
       {/* Fixed Background */}
-      <motion.div 
-        className="fixed inset-0 bg-gradient-to-b from-white via-[#f0f9ff] to-white"
-        style={{ y: backgroundY }}
-      />
+      <div className="fixed inset-0 bg-gradient-to-b from-white via-[#f0f9ff] to-white" />
 
       {/* Content Container */}
       <div className="relative z-10">
