@@ -9,8 +9,6 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Navbar />
-      {/* HERO BACKGROUND GRADIENT - OUTSIDE ALL CONTAINERS */}
-      <div className="absolute top-0 left-0 w-full h-[600px] sm:h-[700px] md:h-[800px] z-0 bg-gradient-to-r from-white via-[#0caeb8] to-white" style={{ opacity: 0.2 }} />
       
       {/* Hero Section */}
       <section id="hero">
@@ -29,9 +27,9 @@ export default function Home() {
                 Watch how Kimbo transforms learning into personalized adventures
               </p>
             </div>
-            <div className="w-full h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-2xl">
+            <div className="w-full h-80 sm:h-96 md:h-[500px] rounded-xl overflow-hidden shadow-2xl bg-black">
               <video 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 controls
                 poster="/images/logo_blue_transparent_big.png"
               >
@@ -44,7 +42,7 @@ export default function Home() {
       </section>
 
       {/* Parallax With/Without Kimbo Comparison */}
-      <section id="comparison">
+      <section id="comparison" className="relative z-20">
         <ParallaxComparison />
       </section>
 

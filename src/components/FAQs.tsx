@@ -88,9 +88,8 @@ export function Footer() {
   ];
 
   const socialLinks = [
-    { href: "https://instagram.com/kimbo", label: "Instagram", icon: "📷" },
-    { href: "https://linkedin.com/company/kimbo", label: "LinkedIn", icon: "💼" },
-    { href: "https://twitter.com/kimbo", label: "Twitter", icon: "🐦" },
+    { href: "https://instagram.com/kimbolearning", label: "Instagram" },
+    { href: "https://www.linkedin.com/company/kimbo-learning", label: "LinkedIn" },
   ];
 
   return (
@@ -110,9 +109,9 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#0caeb8] transition-colors shadow-sm border border-gray-100"
+                  className="text-gray-600 hover:text-[#0caeb8] transition-colors"
                 >
-                  <span className="text-sm">{social.icon}</span>
+                  {social.label}
                 </a>
               ))}
             </div>
@@ -142,10 +141,10 @@ export function Footer() {
                 Questions about Kimbo? We&apos;d love to hear from you.
               </p>
               <a
-                href="mailto:hello@kimbo.com"
+                href="mailto:kimbolearning@gmail.com"
                 className="block text-[#0caeb8] hover:text-[#0891b2] transition-colors"
               >
-                hello@kimbo.com
+                kimbolearning@gmail.com
               </a>
             </div>
           </div>

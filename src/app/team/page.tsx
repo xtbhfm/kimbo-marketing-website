@@ -167,10 +167,10 @@ export default function TeamPage() {
           </p>
           <div className="flex justify-center">
             <Link 
-              href="/"
+              href="/join-waitlist"
               className="inline-flex items-center justify-center px-8 py-4 border border-[#0caeb8] text-[#0caeb8] font-light rounded-2xl hover:bg-[#0caeb8] hover:text-white transition-colors"
             >
-              Back to Home
+              Join the Waitlist
             </Link>
           </div>
         </div>

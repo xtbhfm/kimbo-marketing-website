@@ -4,7 +4,7 @@ import GlowButton from './GlowButton';
 
 export default function Hero() {
   return (
-    <section className="relative z-10 pt-20 sm:pt-32 md:pt-48 lg:pt-64 pb-8 sm:pb-12 overflow-hidden h-screen">
+    <section className="relative z-10 pt-20 sm:pt-32 md:pt-48 lg:pt-64 pb-16 sm:pb-20 overflow-hidden min-h-screen">
       {/* Beautiful Static Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0caeb8] via-[#1d2e4a] to-[#0caeb8]"></div>
       
@@ -48,7 +48,7 @@ export default function Hero() {
             <GlowButton href="/demo" variant="secondary" className="w-full sm:w-auto">
               View Demo
             </GlowButton>
-            <GlowButton href="#how-it-works" variant="secondary" className="w-full sm:w-auto">
+            <GlowButton href="/how-it-works" variant="secondary" className="w-full sm:w-auto">
               See How It Works
             </GlowButton>
           </div>

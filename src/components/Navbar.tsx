@@ -88,15 +88,17 @@ export default function Navbar() {
             ))}
           </div>
           
-          {/* Mobile menu button - Always visible when menu is open, otherwise follows scroll behavior */}
-          <div className={`lg:hidden transition-all duration-300 ${
-            isMenuOpen ? 'opacity-100 translate-y-0' : (isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2')
-          }`}>
+          {/* Mobile menu button */}
+          <div className="lg:hidden">
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={() => {
+                console.log('Hamburger clicked!', isMenuOpen);
+                setIsMenuOpen(!isMenuOpen);
+              }}
               className={`p-2 rounded-md transition-colors ${
                 lastScrollY > 100 && !isMenuOpen ? 'text-[#1d2e4a] hover:bg-gray-100' : 'text-white hover:bg-white/10'
               }`}
+              style={{ zIndex: 9999 }}
             >
               <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMounted && isMenuOpen ? (
@@ -119,7 +121,7 @@ export default function Navbar() {
         
         {/* Mobile menu - Only shows when hamburger is clicked */}
         {isMounted && isMenuOpen && (
-          <div className="lg:hidden mt-2 sm:mt-4 pb-4">
+          <div className="lg:hidden mt-2 sm:mt-4 pb-4 relative z-50">
             <div className="space-y-1 sm:space-y-2 bg-white/95 backdrop-blur-md rounded-lg p-4 shadow-lg">
               {navigation.map((item) => (
                 <a
