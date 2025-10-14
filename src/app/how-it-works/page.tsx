@@ -83,13 +83,13 @@ export default function HowItWorksPage() {
                   IEP Goals Made Simple
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Kimbo automatically tracks progress toward Individualized Education Program (IEP) goals. Teachers and parents can see real-time progress on specific learning objectives, making IEP meetings more productive and transparent.
+                  Kimbo provides powerful IEP tracking tools for parents and teachers who want to monitor specific learning objectives. Whether your child has an IEP or you simply want to track their educational progress, Kimbo makes goal-setting and progress monitoring transparent and meaningful.
                 </p>
                 <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
                   <p className="text-gray-700 italic">
-                    &quot;Finally, we can show concrete progress on IEP goals. The data speaks for itself and makes our meetings so much more meaningful.&quot;
+                    &quot;Finally, we can show concrete progress on learning goals. The data speaks for itself and makes our parent-teacher meetings so much more meaningful.&quot;
                   </p>
-                  <p className="text-sm text-gray-500 mt-2">- Special Education Teacher</p>
+                  <p className="text-sm text-gray-500 mt-2">- Parent & Teacher</p>
                 </div>
               </div>
             </div>

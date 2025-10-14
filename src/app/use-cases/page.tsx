@@ -9,7 +9,7 @@ const useCases = [
   {
     title: 'Victoria\'s Math Adventure',
     subtitle: 'From frustration to fascination',
-    description: 'Victoria, an 8-year-old who doesn\'t fit the traditional SPED demographic, discovered Kimbo\'s magical story-based math lessons. Through interactive adventures, she learned to love numbers and problem-solving in ways that traditional methods never reached.',
+    description: 'Victoria, an 8-year-old who discovered Kimbo\'s magical story-based math lessons. Through interactive adventures, she learned to love numbers and problem-solving in ways that traditional methods never reached.',
     result: '"I never knew math could be this fun! Can we do more problems about the princess and her castle?"',
     features: ['Interest-based learning', 'Story-driven math', 'Engagement focus', 'Confidence building']
   },
