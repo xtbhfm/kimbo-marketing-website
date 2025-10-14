@@ -3,11 +3,23 @@
 import Navbar from '@/components/Navbar';
 import FAQs, { Footer } from '@/components/FAQs';
 import Image from 'next/image';
+import Head from 'next/head';
 
 export default function HowItWorksPage() {
   return (
-    <main className="min-h-screen">
-      <Navbar />
+    <>
+      <Head>
+        <title>How Kimbo Learning Works - AI-Powered Personalized Education Platform</title>
+        <meta name="description" content="Discover how Kimbo Learning's AI-powered platform creates personalized learning adventures. See our IEP goals tracking, parent dashboard, Kimbo Koin rewards, and math comprehension features." />
+        <meta name="keywords" content="how kimbo learning works, AI education platform, personalized learning technology, adaptive learning system, educational AI features" />
+        <meta property="og:title" content="How Kimbo Learning Works - AI-Powered Personalized Education Platform" />
+        <meta property="og:description" content="Discover how Kimbo Learning's AI-powered platform creates personalized learning adventures for children." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://kimbolearning.com/how-it-works" />
+        <meta property="og:image" content="https://kimbolearning.com/images/kimbo-og-image.jpg" />
+      </Head>
+      <main className="min-h-screen">
+        <Navbar />
       
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen bg-gradient-to-br from-[#0caeb8] via-[#1d2e4a] to-[#0caeb8] text-white overflow-hidden flex items-center justify-center">
@@ -251,6 +263,7 @@ export default function HowItWorksPage() {
       <div className="bg-gray-50">
         <Footer />
       </div>
-    </main>
+      </main>
+    </>
   );
 }

@@ -3,6 +3,7 @@
 import Navbar from '@/components/Navbar';
 import { Footer } from '@/components/FAQs';
 import Image from 'next/image';
+import Head from 'next/head';
 
 const useCases = [
   {
@@ -13,10 +14,10 @@ const useCases = [
     features: ['Interest-based learning', 'Story-driven math', 'Engagement focus', 'Confidence building']
   },
   {
-    title: 'Chad\'s Learning Adventure',
+    title: 'Shad\'s Learning Adventure',
     subtitle: 'Inclusive education support',
-    description: 'Chad, a 12-year-old with Down syndrome, found motivation through Kimbo\'s Willy Wonka stories. He explores the chocolate factory while solving math puzzles about counting golden tickets and reading about the magical world of candy.',
-    result: '"Usually I don\'t like math, but this is actually fun!" - Chad',
+    description: 'Shad, a 12-year-old with Down syndrome, found motivation through Kimbo\'s Willy Wonka stories. He explores the chocolate factory while solving math puzzles about counting golden tickets and reading about the magical world of candy.',
+    result: '"Usually I don\'t like math, but this is actually fun!" - Shad',
     features: ['Multi-sensory support', 'Customizable pacing', 'Visual aids', 'Gentle progression']
   }
 ];
@@ -30,7 +31,7 @@ const testimonials = [
   },
   {
     name: 'Naomi',
-    role: 'Mother of Chad (12)',
+    role: 'Mother of Shad (12)',
     content: "Me and my husband are excited for the potential this application (kimbo) has to transform the way our child sees learning and accelerate his educational",
     image: '/images/pexels-pixabay-261895.jpg'
   }
@@ -38,8 +39,19 @@ const testimonials = [
 
 export default function UseCasesPage() {
   return (
-    <main className="min-h-screen">
-      <Navbar />
+    <>
+      <Head>
+        <title>Success Stories - Kimbo Learning Student Case Studies</title>
+        <meta name="description" content="See how Kimbo Learning transforms education for students like Victoria and Shad. Real success stories of personalized learning adventures that adapt to each child's needs." />
+        <meta name="keywords" content="kimbo learning success stories, personalized learning case studies, adaptive education examples, student learning outcomes, educational technology results" />
+        <meta property="og:title" content="Success Stories - Kimbo Learning Student Case Studies" />
+        <meta property="og:description" content="See how Kimbo Learning transforms education for students. Real success stories of personalized learning adventures." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://kimbolearning.com/use-cases" />
+        <meta property="og:image" content="https://kimbolearning.com/images/kimbo-og-image.jpg" />
+      </Head>
+      <main className="min-h-screen">
+        <Navbar />
       
       {/* Hero Section */}
       <section className="relative min-h-screen bg-gradient-to-br from-[#0caeb8] via-[#1d2e4a] to-[#0caeb8] text-white overflow-hidden flex items-center justify-center">
@@ -220,6 +232,7 @@ export default function UseCasesPage() {
       <div className="bg-gray-50">
         <Footer />
       </div>
-    </main>
+      </main>
+    </>
   );
 }

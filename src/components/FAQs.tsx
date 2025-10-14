@@ -88,8 +88,9 @@ export function Footer() {
   ];
 
   const socialLinks = [
-    { href: "https://instagram.com/kimbolearning", label: "Instagram" },
-    { href: "https://www.linkedin.com/company/kimbo-learning", label: "LinkedIn" },
+    { href: "https://www.instagram.com/kimbolearning/", label: "Instagram" },
+    { href: "https://x.com/KimboLearning", label: "X" },
+    { href: "https://www.linkedin.com/company/kimbo-learning/", label: "LinkedIn" },
   ];
 
   return (
@@ -141,10 +142,10 @@ export function Footer() {
                 Questions about Kimbo? We&apos;d love to hear from you.
               </p>
               <a
-                href="mailto:kimbolearning@gmail.com"
+                href="mailto:hello@kimbolearning.com"
                 className="block text-[#0caeb8] hover:text-[#0891b2] transition-colors"
               >
-                kimbolearning@gmail.com
+                hello@kimbolearning.com
               </a>
             </div>
           </div>

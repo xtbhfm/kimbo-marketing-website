@@ -2,23 +2,24 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import { Footer } from '@/components/FAQs';
+import Head from 'next/head';
 
 export default function TeamPage() {
   const teamMembers = [
     {
       name: "Noah Muhirwa",
-      role: "Co-Founder & COO/CTO",
+      role: "Co-Founder",
       bio: "Banking Analyst driven to create meaningful, large-scale change at the intersection of education and technology. With a background spanning investment management and entrepreneurship, Noah's mission is to leverage innovation to make a lasting global impact.",
       image: "/images/noah.jpg",
-      email: "kimbolearning@gmail.com",
+      email: "noah@kimbolearning.com",
       linkedin: "https://www.linkedin.com/in/noahmuhirwa/"
     },
     {
       name: "Titus Grimsley",
-      role: "Co-Founder & CEO",
+      role: "Co-Founder",
       bio: "Venture Capital Analyst and former entrepreneur passionate about technology and impact investing. Inspired by his close relationship with his neurodivergent brother, Titus is dedicated to building solutions that empower and support diverse learning needs.",
       image: "/images/titus.jpg",
-      email: "kimbolearning@gmail.com",
+      email: "TitusGrimsley@kimbolearning.com",
       linkedin: "https://www.linkedin.com/in/titus-grimsley/"
     },
     {
@@ -40,8 +41,19 @@ export default function TeamPage() {
   ];
 
   return (
-    <main className="min-h-screen">
-      <Navbar />
+    <>
+      <Head>
+        <title>Meet the Team - Kimbo Learning Founders and Developers</title>
+        <meta name="description" content="Meet the Kimbo Learning team: Noah Muhirwa, Titus Grimsley, Blake Almanza, and Dylan Lewis. Learn about our mission to revolutionize personalized education through AI-powered learning adventures." />
+        <meta name="keywords" content="kimbo learning team, educational technology founders, AI learning developers, personalized education team, kimbo learning founders" />
+        <meta property="og:title" content="Meet the Team - Kimbo Learning Founders and Developers" />
+        <meta property="og:description" content="Meet the Kimbo Learning team dedicated to revolutionizing personalized education through AI-powered learning adventures." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://kimbolearning.com/team" />
+        <meta property="og:image" content="https://kimbolearning.com/images/kimbo-og-image.jpg" />
+      </Head>
+      <main className="min-h-screen">
+        <Navbar />
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen bg-gradient-to-br from-[#0caeb8] via-[#1d2e4a] to-[#0caeb8] text-white overflow-hidden flex items-center justify-center">
         {/* Static floating elements */}
@@ -180,6 +192,7 @@ export default function TeamPage() {
       <div className="bg-gray-50">
         <Footer />
       </div>
-    </main>
+      </main>
+    </>
   );
 }

@@ -1,10 +1,22 @@
 import Navbar from '@/components/Navbar'
 import { Footer } from '@/components/FAQs'
+import Head from 'next/head'
 
 export default function DemoPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
+    <>
+      <Head>
+        <title>Kimbo Learning Demo - See Our AI-Powered Education Platform in Action</title>
+        <meta name="description" content="Watch the Kimbo Learning demo to see how our AI-powered platform creates personalized learning adventures that adapt to your child's interests and skill level." />
+        <meta name="keywords" content="kimbo learning demo, AI education platform demo, personalized learning video, educational technology demonstration" />
+        <meta property="og:title" content="Kimbo Learning Demo - See Our AI-Powered Education Platform in Action" />
+        <meta property="og:description" content="Watch the Kimbo Learning demo to see how our AI-powered platform creates personalized learning adventures." />
+        <meta property="og:type" content="video" />
+        <meta property="og:url" content="https://kimbolearning.com/demo" />
+        <meta property="og:image" content="https://kimbolearning.com/images/kimbo-og-image.jpg" />
+      </Head>
+      <div className="min-h-screen bg-white">
+        <Navbar />
       {/* Hero Section */}
       <section className="relative min-h-screen bg-gradient-to-br from-[#0caeb8] via-[#1d2e4a] to-[#0caeb8] text-white overflow-hidden flex items-center justify-center">
         {/* Static floating elements */}
@@ -111,6 +123,7 @@ export default function DemoPage() {
       <div className="bg-gray-50">
         <Footer />
       </div>
-    </div>
+      </div>
+    </>
   )
 }
