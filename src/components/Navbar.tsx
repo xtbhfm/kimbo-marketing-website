@@ -9,6 +9,7 @@ const navigation = [
   { name: 'How It Works', href: '/how-it-works' },
   { name: 'Use Cases', href: '/use-cases' },
   { name: 'Meet the Team', href: '/team' },
+  { name: 'Research', href: '/research' },
 ];
 
 export default function Navbar() {
@@ -73,7 +74,7 @@ export default function Navbar() {
           </div>
           <div className="hidden lg:flex lg:gap-x-16">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className={`text-sm font-semibold leading-6 transition-all duration-300 relative group ${
@@ -84,7 +85,7 @@ export default function Navbar() {
                 <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
                   lastScrollY > 100 ? 'bg-[#0caeb8]' : 'bg-[#0caeb8]'
                 }`}></span>
-              </a>
+              </Link>
             ))}
           </div>
           
@@ -124,7 +125,7 @@ export default function Navbar() {
           <div className="lg:hidden mt-2 sm:mt-4 pb-4 relative z-50">
             <div className="space-y-1 sm:space-y-2 bg-white/95 backdrop-blur-md rounded-lg p-4 shadow-lg">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className={`block px-3 sm:px-4 py-2 sm:py-3 text-sm font-semibold rounded-md transition-colors ${
@@ -133,7 +134,7 @@ export default function Navbar() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               <div className="pt-2 sm:pt-4 space-y-1 sm:space-y-2 border-t border-gray-200">
                 <a

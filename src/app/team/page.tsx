@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import AvatarImage from '@/components/AvatarImage';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import { Footer } from '@/components/FAQs';
@@ -110,12 +111,7 @@ export default function TeamPage() {
                 <div className="mb-6">
                   <div className="relative w-40 h-40 bg-gray-200 rounded-full overflow-hidden shadow-md mx-auto">
                     {member.image ? (
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        className="object-cover"
-                      />
+                      <AvatarImage alt={member.name} srcBase={member.image} name={member.name} />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center text-gray-400">
                         <div className="text-center">
