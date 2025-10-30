@@ -18,6 +18,8 @@ function toSlug(input: string) {
     .replace(/(^-|-$)/g, '');
 }
 
+const IMAGE_EXTS = ['.jpg', '.jpeg', '.png', '.webp', '.JPG', '.JPEG', '.PNG', '.WEBP'];
+
 export default function AvatarImage({ alt, srcBase, name, fill = true, className }: Props) {
   const derived = useMemo(() => (name ? toSlug(name) : undefined), [name]);
 
@@ -35,7 +37,6 @@ export default function AvatarImage({ alt, srcBase, name, fill = true, className
     return list;
   }, [srcBase, derived]);
 
-  const exts = ['.jpg', '.jpeg', '.png', '.webp', '.JPG', '.JPEG', '.PNG', '.WEBP'];
   const candidates = useMemo(() => {
     const list: string[] = [];
     for (const b of bases) {
@@ -43,7 +44,7 @@ export default function AvatarImage({ alt, srcBase, name, fill = true, className
       if (/\.(jpg|jpeg|png|webp)$/i.test(b)) {
         list.push(b);
       } else {
-        for (const e of exts) list.push(`${b}${e}`);
+        for (const e of IMAGE_EXTS) list.push(`${b}${e}`);
       }
     }
     // final fallback generic avatar

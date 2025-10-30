@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import AvatarImage from '@/components/AvatarImage';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';

@@ -53,7 +53,7 @@ export default function ArticleImage({ title, slug, className, fill = true, size
       for (const e of exts) list.push(`${b}${e}`);
     }
     return list;
-  }, [slug, derivedTitleSlug]);
+  }, [slug, derivedTitleSlug, imageId, title]);
 
   const [index, setIndex] = useState(0);
   const src = candidates[index];
