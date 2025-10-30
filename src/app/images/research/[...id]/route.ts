@@ -9,8 +9,9 @@ function toSlug(input: string) {
     .replace(/(^-|-$)/g, '');
 }
 
-export async function GET(_req: Request, { params }: { params: { id: string[] } }) {
-  const joined = params.id.join('/');
+export async function GET(_req: Request, { params }: { params: Promise<{ id: string[] }> }) {
+  const { id } = await params;
+  const joined = id.join('/');
   const decoded = decodeURIComponent(joined);
   const base = decoded.replace(/\.(jpg|jpeg|png|webp)$/i, '');
   const candidates = [base, toSlug(base)];
